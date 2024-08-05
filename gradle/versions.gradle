@@ -3,8 +3,8 @@
  * Licensed under the MIT License.
  */
 
-ext.lifecycle_version = '2.2.0'
-ext.lifecycle_ktx_version = '2.5.1'
+ext.lifecycle_version = '2.4.1'
+ext.lifecycle_ktx_version = '2.4.1'
 
 ext.room_version = '2.2.5'
 ext.navigation_version = '2.5.3'

@@ -69,4 +69,5 @@
     <string name="send_request">Send Request</string>
     <string name="request_url_label">Request URL</string>
     <string name="request_url_hint">https://contoso.com</string>
+    <string name="IDS_DYNAMIC_FEATURE_SCAN_SDK_TITLE">ScanSDKDF</string>
 </resources>

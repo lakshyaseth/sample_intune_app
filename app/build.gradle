@@ -9,17 +9,17 @@ apply plugin: 'com.android.application'
  * https://docs.microsoft.com/en-us/intune/app-sdk-android#replace-classes-methods-and-activities-with-their-mam-equivalent
  * for more information.
  */
-apply plugin: 'com.microsoft.intune.mam'
+apply plugin: 'com.microsoft.intune.mam-preview'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 apply from: "$rootProject.projectDir/gradle/versions.gradle"
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.microsoft.intune.samples.taskr"
-        minSdkVersion 26
-        targetSdkVersion 33
+        minSdkVersion 28
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -48,13 +48,13 @@ android {
     packagingOptions {
         pickFirst 'META-INF/*'
     }
+    dynamicFeatures = [':ScanSDKDF']
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_ktx_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ktx_version"
@@ -68,10 +68,6 @@ dependencies {
     // Include the MAM SDK
     implementation files('MAMSDK/Microsoft.Intune.MAM.SDK.aar')
 
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-
-    // Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 

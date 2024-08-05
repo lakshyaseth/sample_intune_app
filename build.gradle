@@ -4,17 +4,17 @@
  */
 
 buildscript {
-    
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         // Include the MAM build plugin and Javassist, which it depends on
         classpath "org.javassist:javassist:3.27.0-GA"
         classpath files("app/MAMSDK/com.microsoft.intune.mam.build.jar")
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21'
     }
 }
 
